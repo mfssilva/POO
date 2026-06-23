@@ -1,21 +1,21 @@
-﻿import os
+import os
 from src.perguntadiscursiva import PerguntaDiscursiva
 from src.correcao import Correcao
 
 def main():
     print("=== Iniciando Teste do Sistema de Quiz com LLM (Guia 4) ===")
     
-    # 1. Verificando se a chave de API está configurada
+    
     if not os.environ.get("GROQ_API_KEY"):
         print("\n⚠️ AVISO: A variável de ambiente GROQ_API_KEY não foi detectada.")
         print("Defina-a no terminal antes de rodar: set GROQ_API_KEY=sua_chave\n")
     
-    # 2. Instanciando a pergunta discursiva vazia e atribuindo os dados
+    
     pergunta = PerguntaDiscursiva()
     pergunta.texto = "Explique o que é Encapsulamento em Programação Orientada a Objetos."
     pergunta.resposta_esperada = "É o mecanismo que esconde os detalhes internos de uma classe e protege os dados usando modificadores de acesso (privado/protegido) e métodos getters/setters."
 
-    # 3. Simulando a resposta de um aluno
+
     resposta_do_aluno = "Serve para esconder os dados do código lá dentro da classe usando private para ninguém mexer direto e usar métodos para acessar."
     
     print(f"\nQuestão: {pergunta.texto}")

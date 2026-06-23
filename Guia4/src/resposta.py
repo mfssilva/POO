@@ -1,4 +1,8 @@
-from typing import List, Tuple, Dict
+import pytest
 
-class Resposta:
-    pass
+from src.resposta import Resposta
+
+
+def test_nao_instanciar_resposta_abstract():
+    with pytest.raises(TypeError):
+        Resposta(None)
